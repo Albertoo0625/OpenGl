@@ -968,9 +968,23 @@
     <ClInclude Include="src\Vendor\Imgui\imgui_impl_opengl3_loader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Dependencies\GLEW\include\GL\eglew.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\GLEW\include\GL\glew.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\GLEW\include\GL\glxew.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\GLEW\include\GL\wglew.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dependencies\lib-vc2022\glfw3.lib" />
+    <Library Include="Dependencies\GLEW\lib\Release\Win32\glew32.lib" />
+    <Library Include="Dependencies\GLEW\lib\Release\Win32\glew32s.lib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
@@ -1382,6 +1396,16 @@
     <None Include="src\Vendor\glm\gtx\wrap.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="Dependencies\GLEW\doc\advanced.html" />
+    <None Include="Dependencies\GLEW\doc\basic.html" />
+    <None Include="Dependencies\GLEW\doc\build.html" />
+    <None Include="Dependencies\GLEW\doc\credits.html" />
+    <None Include="Dependencies\GLEW\doc\glew.html" />
+    <None Include="Dependencies\GLEW\doc\glxew.html" />
+    <None Include="Dependencies\GLEW\doc\index.html" />
+    <None Include="Dependencies\GLEW\doc\install.html" />
+    <None Include="Dependencies\GLEW\doc\log.html" />
+    <None Include="Dependencies\GLEW\doc\wglew.html" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\Textures\Test.png">
@@ -1399,5 +1423,8 @@
     <Image Include="res\Textures\brick.png">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Dependencies\GLEW\LICENSE.txt" />
   </ItemGroup>
 </Project>

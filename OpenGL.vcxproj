@@ -165,6 +165,10 @@
     <ClCompile Include="src\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Dependencies\GLEW\include\GL\eglew.h" />
+    <ClInclude Include="Dependencies\GLEW\include\GL\glew.h" />
+    <ClInclude Include="Dependencies\GLEW\include\GL\glxew.h" />
+    <ClInclude Include="Dependencies\GLEW\include\GL\wglew.h" />
     <ClInclude Include="Dependencies\GLFW\glfw3.h" />
     <ClInclude Include="Dependencies\GLFW\glfw3native.h" />
     <ClInclude Include="src\IndexBuffer.h" />
@@ -468,9 +472,21 @@
     <ClInclude Include="src\VertexBufferLayout.h" />
   </ItemGroup>
   <ItemGroup>
+    <Library Include="Dependencies\GLEW\lib\Release\Win32\glew32.lib" />
+    <Library Include="Dependencies\GLEW\lib\Release\Win32\glew32s.lib" />
     <Library Include="Dependencies\lib-vc2022\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Dependencies\GLEW\doc\advanced.html" />
+    <None Include="Dependencies\GLEW\doc\basic.html" />
+    <None Include="Dependencies\GLEW\doc\build.html" />
+    <None Include="Dependencies\GLEW\doc\credits.html" />
+    <None Include="Dependencies\GLEW\doc\glew.html" />
+    <None Include="Dependencies\GLEW\doc\glxew.html" />
+    <None Include="Dependencies\GLEW\doc\index.html" />
+    <None Include="Dependencies\GLEW\doc\install.html" />
+    <None Include="Dependencies\GLEW\doc\log.html" />
+    <None Include="Dependencies\GLEW\doc\wglew.html" />
     <None Include="res\shaders\Basic.shader" />
     <None Include="src\Vendor\glm\detail\func_common.inl" />
     <None Include="src\Vendor\glm\detail\func_common_simd.inl" />
@@ -615,6 +631,9 @@
     <Image Include="res\Textures\Eyes.png" />
     <Image Include="res\Textures\Loafer.jpg" />
     <Image Include="res\Textures\Test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Dependencies\GLEW\LICENSE.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
