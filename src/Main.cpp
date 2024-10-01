@@ -182,8 +182,30 @@ int main(void)
         glm::mat4 view = glm::mat4(1.0f);
         glm::mat4 proj = glm::mat4(1.0f);
 
-        model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.0f, 1.0f, 0.0f));
-        view = glm::translate(view, glm::vec3(0.0f, -0.5f, -2.0f));
+
+        ImGui::Begin("My Gui");
+
+        ImGui::Text("hello world");
+        // Generate samples and plot them
+        float samples[100];
+        for (int n = 0; n < 100; n++)
+            samples[n] = sinf(n * 0.2f + (float)ImGui::GetTime() * 1.5f);
+        ImGui::PlotLines("Samples", samples, 100);
+
+        glm::vec3 translation(0.0f, 1.0f, 0.0f);
+        glm::vec3 v_camPos(0.0f, -0.5f, -2.0f);
+
+        ImGui::SliderFloat3("float", &translation.x, 0.0f, 1.0f);
+        ImGui::SliderFloat3("Camera position", &v_camPos.x, -100.0f, -1.0f);
+
+        ImGui::End();
+
+        ImGui::Render();
+
+        
+
+        model = glm::rotate(model, glm::radians(rotation), translation);
+        view = glm::translate(view,v_camPos);
         proj = glm::perspective(glm::radians(45.0f), (float)width / height, 0.1f, 100.0f);
 
         glm::mat4 mvp = proj * view * model;
@@ -197,18 +219,7 @@ int main(void)
         renderer.Draw(va, ib, shader);
 
 
-        ImGui::Begin("My Gui");
 
-        ImGui::Text("hello world");
-        // Generate samples and plot them
-        float samples[100];
-        for (int n = 0; n < 100; n++)
-            samples[n] = sinf(n * 0.2f + (float)ImGui::GetTime() * 1.5f);
-        ImGui::PlotLines("Samples", samples, 100);
-
-        ImGui::End();
-
-        ImGui::Render();
 
         int display_w, display_h;
         glfwGetFramebufferSize(window, &display_w, &display_h);
