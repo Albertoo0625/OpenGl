@@ -195,7 +195,7 @@ int main(void)
         glm::vec3 translation(0.0f, 1.0f, 0.0f);
         glm::vec3 v_camPos(0.0f, -0.5f, -2.0f);
 
-        ImGui::SliderFloat3("float", &translation.x, 0.0f, 1.0f);
+        ImGui::SliderFloat3("Translation", &translation.x, 0.0f, 1.0f);
         ImGui::SliderFloat3("Camera position", &v_camPos.x, -100.0f, -1.0f);
 
         ImGui::End();
