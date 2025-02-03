@@ -28,10 +28,12 @@ public:
 	void setUniform4f(const std::string& name,float v1,float v2,float v3,float v4);
 	void setUniformMat4(const std::string& name,const glm::mat4& matrix);
 	ShaderStrings ParseShader(const std::string& filepath);
+	int GetUniformLocation(const std::string& name);
+
 
 
 private:
-	int GetUniformLocation(const std::string& name);
+	
 	unsigned int CompileShader(unsigned int type, const std::string& source);
 	unsigned int CreateShader(const std::string& vertexshader, const std::string& fragmentshader);
 };
